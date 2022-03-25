@@ -1,0 +1,414 @@
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+@font-face {
+font-family: Pacifico;
+src:url('https://minhchuit.net/font/Pacifico-Regular.ttf') format('truetype');
+font-weight:normal;
+ font-style:normal;
+}
+body{
+  background: url(https://minhchuit.net/images/noise_lines.png);
+  font-family: 'Pacifico', Tahoma;
+  overflow: hidden;
+  color: #fff;
+}
+.bgoverlay{
+  background: rgb(103,58,183);
+  background: rgba(103,58,183,0.7);
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.container{
+  position: relative;
+  margin: 120px auto 0 auto;
+  width: 320px;
+}
+.ico{
+  display: block;
+  width: 320px;
+  height: 320px;
+}
+.open .ico{
+  animation: open 6s;
+  transform: scale(10);
+    user-select: none;
+}
+.ico .title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -110px;
+  margin-top: -100px;
+  z-index: 4;
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    user-select: none;
+}
+.open .ico .title{
+  opacity: 0;
+  transition: all 0.3s ease;
+  top:-150px;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  position: absolute;
+  top:0;
+  left:0;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  display: block;
+  font-size: 20em;
+  color: #ff4081;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ico2:before,
+.ico2:after{
+  color: #e91e63;
+}
+.ico:before{
+  z-index: 3;
+}
+.ico:after{
+  animation: explode 4s infinite;
+}
+.ico2:before{
+  animation: explodeSmall 3s infinite;
+}
+.ico2:after{
+  animation: explodeSmall 2s infinite;
+}
+.endtext{
+  opacity:0;
+  position: absolute;
+  top:-100px;
+  width:100%;
+    text-align: center;
+}
+.open .endtext{
+  top:0;
+  opacity: 1;
+  animation: show 5s;
+}
+.endtext .close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.endtext h1,
+.endtext h2,
+.endtext h3{
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-align: center;
+  font-weight: normal;
+}
+.endtext h1{
+  font-size: 50px;
+}
+.endtext h2{
+  font-size: 30px;
+}
+.endtext h3{
+  font-size: 20px;
+}
+@keyframes explode {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+}
+@keyframes explodeSmall {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+}
+@keyframes open {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(10);
+    }
+}
+@keyframes show {
+    from {
+      opacity: 0;
+      top: -100px;
+    }
+    to {
+      opacity: 1;
+      top:0;
+    }
+}
+h1,h2,h3{
+     user-select: none;}
+}
+#all{
+text-align: center;
+width: 50%;
+margin: 0 auto;
+font-weight: bold;
+}
+.a{
+ background: #ff0000;
+  border: none;
+  font-size: 20x;
+  color: #fff;
+border-radius: 10px;
+padding: 5px 15px 5px 15px;
+margin-right: 8px;
+font-weight: bold;
+}
+.b{
+   background: #00ff00;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+border-radius: 10px;
+padding: 5px 15px 5px 15px;
+margin-left: 8px;
+font-weight: bold;
+}
+a:link {
+color : #fff;
+text-decoration: none;
+}
+a:visited {
+color : #fff ;
+  text-decoration: none;
+}
+a:hover, a:active {
+color : #fff;
+text-decoration: none;
+}
